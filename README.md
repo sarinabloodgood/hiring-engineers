@@ -1,24 +1,30 @@
-If you want to apply as a Tech Writer at [Datadog](http://datadog.com) you are in the right spot. Read on, it's fun, I promise.
+If you are applying as a Tech Writer at [Datadog](https://www.datadoghq.com/) you are in the right spot.
 
-<a href="http://www.flickr.com/photos/alq666/10125225186/" title="The view from our roofdeck">
+<a href="http://www.flickr.com/photos/alq666/10125225186/" title="The view from our old offices roofdeck">
 <img src="http://farm6.staticflickr.com/5497/10125225186_825bfdb929.jpg" width="500" height="332" alt="_DSC4652"></a>
 
-## The Exercise
+## Instructions
+
+If you have a question, create an issue in this repository or email us.
+
+To submit your answers:
+
+* Fork this repo.
+* Answer the questions in answers.md
+* Commit as much code and images as you need to support your answers.
+* Submit a pull request.
+* Don't forget to include links to your dashboard(s), or, even better, links and screenshots. We recommend that you include your screenshots inline with your answers.
 
 Don’t forget to read the [References](https://github.com/jeremy-lq/hiring-engineers/blob/tech-writer/README.md#references)
 
-## Questions
-
-Please provide screenshots and code snippets for all steps.
-
 ## Prerequisites - Setup the environment
 
-You can utilize any OS/host that you would like to complete this exercise. However, we recommend one of the following approaches:
+You can utilize [any OS/host](https://app.datadoghq.com/account/settings#agent) to complete this exercise. However, we recommend one of the following approaches:
 
-* You can spin up a fresh linux VM via Vagrant or other tools so that you don’t run into any OS or dependency issues. [Here are instructions](https://github.com/jeremy-lq/hiring-engineers/blob/tech-writer/README.md#vagrant) for setting up a Vagrant Ubuntu LTS VM.
+* Spin up a fresh Linux VM via Vagrant or other tools so that you don’t run into any OS or dependency issues. [Here are instructions](https://github.com/jeremy-lq/hiring-engineers/blob/tech-writer/README.md#vagrant) for setting up a Vagrant Ubuntu LTS VM.
 * You can utilize a Containerized approach with Docker for Linux and our dockerized Datadog Agent image.
 
-Then, sign up for Datadog (use “Datadog Recruiting Candidate” in the “Company” field), get the Agent reporting metrics from your local machine.
+Then, [sign up for Datadog](https://app.datadoghq.com/signup) (use “Datadog Recruiting Candidate” in the “Company” field), and get the Agent reporting metrics from your local machine.
 
 ## Collecting Metrics:
 
@@ -45,19 +51,7 @@ Once this is created, access the Dashboard from your Dashboard List in the UI:
 
 ## Final Question:
 
-The Datadog community has written a substantial number of high quality integrations and libraries. Select one from [this page](https://docs.datadoghq.com/developers/libraries/). With this selection in mind, write a blog post that announces your selection and explains the benefits it offers our users/community. The post should cover installation, configuration, usage, and best practices along with code samples where applicable. You should also thank the contributor for their effort.
-
-## Instructions
-
-If you have a question, create an issue in this repository.
-
-To submit your answers:
-
-* Fork this repo.
-* Answer the questions in answers.md
-* Commit as much code as you need to support your answers.
-* Submit a pull request.
-* Don't forget to include links to your dashboard(s), even better links and screenshots. We recommend that you include your screenshots inline with your answers.
+The Datadog community has written a substantial number of high-quality integrations and libraries. Select one from [this page](https://docs.datadoghq.com/developers/libraries/). With this selection in mind, write a blog post that announces your selection and explains the benefits it offers our users/community. The post should cover installation, configuration, usage, and best practices along with code samples where applicable. You should also thank the contributor for their effort.
 
 ## References
 
