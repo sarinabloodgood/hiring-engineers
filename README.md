@@ -13,7 +13,7 @@ To submit your answers:
 * Answer the questions in answers.md
 * Commit as much code and images as you need to support your answers.
 * Submit a pull request.
-* Don't forget to include links to your dashboard(s), even better links and screenshots. We recommend that you include your screenshots inline with your answers.
+* Don't forget to include links to your dashboard(s), or, even better, links and screenshots. We recommend that you include your screenshots inline with your answers.
 
 Don’t forget to read the [References](https://github.com/jeremy-lq/hiring-engineers/blob/tech-writer/README.md#references)
 
@@ -21,7 +21,7 @@ Don’t forget to read the [References](https://github.com/jeremy-lq/hiring-engi
 
 You can utilize [any OS/host](https://app.datadoghq.com/account/settings#agent) to complete this exercise. However, we recommend one of the following approaches:
 
-* Spin up a fresh linux VM via Vagrant or other tools so that you don’t run into any OS or dependency issues. [Here are instructions](https://github.com/jeremy-lq/hiring-engineers/blob/tech-writer/README.md#vagrant) for setting up a Vagrant Ubuntu LTS VM.
+* Spin up a fresh Linux VM via Vagrant or other tools so that you don’t run into any OS or dependency issues. [Here are instructions](https://github.com/jeremy-lq/hiring-engineers/blob/tech-writer/README.md#vagrant) for setting up a Vagrant Ubuntu LTS VM.
 * You can utilize a Containerized approach with Docker for Linux and our dockerized Datadog Agent image.
 
 Then, [sign up for Datadog](https://app.datadoghq.com/signup) (use “Datadog Recruiting Candidate” in the “Company” field), and get the Agent reporting metrics from your local machine.
