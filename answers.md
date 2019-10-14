@@ -93,23 +93,12 @@ Edit the mongo.d/conf.yaml file in the conf.d folder at the root of your Agentâ€
 To create a custom agent check, create a new Python file in etc/checks.d. In this script, import the random module and the check base class. Create a function that inherits the check itself and submits a metric with a random value between 0 and 1000.
 
 ```Python
+from datadog_checks.checks import AgentCheck
 import random
-
-# the following try/except block will make the custom check compatible with any Agent version
-try:
-    # first, try to import the base class from old versions of the Agent...
-    from checks import AgentCheck
-except ImportError:
-    # ...if the above failed, the check is running in Agent version 6 or later
-    from datadog_checks.checks import AgentCheck
-
-# content of the special variable __version__ will be shown in the Agent status page
-__version__ = "1.0.0"
-
 
 class HelloCheck(AgentCheck):
     def check(self, instance):
-        self.gauge('my_metric', random.randint(1,1000), tags=['TAG_KEY:TAG_VALUE'])
+        self.gauge('my_metric', random.randint(0, 1000))
 ```
 
 ## Change a Check Collection Interval
@@ -127,3 +116,46 @@ instances:
 
 ### Did You Know?
 The collection interval can be configured without modifying the Python check file. To do this, set the collection interval in the YAML file as noted aboved instead of configuring the interval in the Python file.
+
+## Visualizing Data
+To create a dashboard with a timeseries widget, import that Datadog API and define the timeseries widget. In the example, we set the metric used in our custom agent check to be visualized as a timeseries. We also used the anomoly function in a timeseries to show the number of MongoDB update operations per second.
+
+```Python
+from datadog import initialize, api
+
+options = {
+    'api_key': '6995230b413764f1df36dbb30fee22d4',
+    'app_key': '9b798128f85ae046ad16eafe3435a51f22656105'
+}
+
+initialize(**options)
+
+title = 'My Metric'
+widgets = [{
+    'definition': {
+        'type': 'timeseries',
+        'requests': [
+            {
+                "q": "avg:my_metric{*}"
+            }
+        ],
+        'title': 'My Metric'
+    }
+},
+    {
+    'definition': {
+        'type': 'timeseries',
+        'requests': [
+            {'q': "anomalies(avg:mongodb.metrics.ttl.passesps{*}, 'basic', 2)"}
+        ],
+        'title': 'MongoDB # of Update Ops per sec'
+    }
+}]
+layout_type = 'ordered'
+description = 'A dashboard with metric info.'
+
+api.Dashboard.create(title=title,
+                     widgets=widgets,
+                     layout_type=layout_type,
+                     description=description)
+```
