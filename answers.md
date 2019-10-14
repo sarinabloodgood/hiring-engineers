@@ -159,3 +159,9 @@ api.Dashboard.create(title=title,
                      layout_type=layout_type,
                      description=description)
 ```
+## Dashboard UI
+![Set timeboard time frame to the past 5 minutes, take a snapshot of the graph and use @ notation](https://user-images.githubusercontent.com/33497827/66783605-3bfe1580-eea6-11e9-8865-e0434e5f6e15.png)
+Datadog's dashboard UI populates metrics in real-time. To access your dashboard, log into [Datadog](https://app.datadoghq.com/) and select Dashboards from the left hand navigation. Here you can view your dashboards, take snapshots and send timeboards, or export the entire dashboard as a JSON file. To send a snapshot, hover over the top right corner of the timeboard until the export icon appears. Choose send snapshot and use the @ symbol to send the file to yourself or others.
+
+## Did you know?
+Anomaly algorithms identify when a metric is behaving differently than before.
