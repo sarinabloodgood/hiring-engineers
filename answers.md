@@ -118,7 +118,7 @@ instances:
 The collection interval can be configured without modifying the Python check file. To do this, set the collection interval in the YAML file as noted aboved instead of configuring the interval in the Python file.
 
 ## Visualizing Data
-To create a dashboard with a timeseries widget, import that Datadog API and define the timeseries widget. In the example, we set the metric used in our custom agent check to be visualized as a timeseries. We also used the anomoly function in a timeseries to show the number of MongoDB update operations per second.
+To create a dashboard with a timeseries widget, import that Datadog API and define the timeseries widget. In this example we set the metric used in our custom agent check to be visualized as a timeseries. We also used the anomoly function in a timeseries to show the number of MongoDB update operations per second. You can choose any widget type that is best for visualizing the metrics you need to visualize.
 
 ```Python
 from datadog import initialize, api
@@ -164,4 +164,31 @@ api.Dashboard.create(title=title,
 Datadog's dashboard UI populates metrics in real-time. To access your dashboard, log into [Datadog](https://app.datadoghq.com/) and select Dashboards from the left hand navigation. Here you can view your dashboards, take snapshots and send timeboards, or export the entire dashboard as a JSON file. To send a snapshot, hover over the top right corner of the timeboard until the export icon appears. Choose send snapshot and use the @ symbol to send the file to yourself or others.
 
 ## Did you know?
-Anomaly algorithms identify when a metric is behaving differently than before.
+Anomaly algorithms identify when a metric is behaving differently than before. These algorithms take into account trends, seasonal day-of-week, and time-of-day patterns and are well-suited for metrics with strong trends and recurring patterns that are hard to monitor.
+
+# Blog Post
+## Monitor your Auth0 logs with Datadog
+
+Auth0 is a universal authentication and authorization platform for web, mobile, and native applications. Auth0 permits any application or API to connect to their service to eliminate unauthorized logins and improper access. Using the Dashboard or the Management API logs endpoint, Auth0 can pull log data on actions performed by administrators using the Dashboard, operations performed via the Management API, and authentications made by your users.
+
+---
+
+Datadog log management enables you to collect, process, archive, explore, and monitor all of your logs. Ingesting logs from your hosts, containers, and cloud providers to generate live metrics lets you get a glimpse of what’s happening across all of your environments. With integrations and extensions, Datadog allows you to integrate all of your logs from different environments into one place. New custom integrations contributed by the Datadog community help expand your metric set beyond the scope of our own integrations, giving you the tools to monitor whatever services you need.
+
+We’re excited to announce the Auth0 logs extension contributed by BetaProjectWave. With this new extension you can now integrate the Auth0 platform with Datadog to view your Auth0 logs in real-time. This easy to install and quick to configure extension lets you see your Auth0 logs in [Datadog log management](https://docs.datadoghq.com/logs/) so you can easily filter and visualize log data without having to log into the Auth0 platform.
+
+To get started, log into your Auth0 account and visit the [Extensions Gallery](https://auth0.auth0.com/login?state=g6Fo2SBmQnJUcGZzeTZlSEF1RzRuLW1xbjloLVpqanZqSzZ0d6N0aWTZIFNDTW5BNFd5V0k0TExoRnFuRjBGdGF0THhVZHBpLUo2o2NpZNkgekVZZnBvRnpVTUV6aWxoa0hpbGNXb05rckZmSjNoQUk&client=zEYfpoFzUMEzilhkHilcWoNkrFfJ3hAI&protocol=oauth2&response_type=code&redirect_uri=https%3A%2F%2Fmanage.auth0.com%2Fcallback&scope=openid%20profile%20name%20email%20nickname%20created_at#/extensions). Click on the Datadog extension (linked above) or build locally using this [Github repo](https://github.com/BetaProjectWave/auth0-logs-to-datadog#filters).
+
+Building this extension locally requires [NodeJS 6+](https://nodejs.org/en/download/). To build this extension locally, click on the clone/download repo button in Github to copy the URL and use Git or download the ZIP file. To download the repo using Git, open a shell of your choice and use the following command:
+
+```Shell
+git clone https://github.com/BetaProjectWave/auth0-logs-to-datadog.git
+```
+
+Once the files are available on your local host, run the command `yarn install —ignore engines` to install all of the appropriate dependencies. Once all dependencies are installed, bundle the app by running the `yarn build` command.
+
+As a best practice, we recommend additionally configuring this extension to filter logs by a specific type such as LOG_TYPES or LOG_LEVEL. For example, to filter logs tied to a specific event such as when a user successfully logs in, set the `LOG_TYPES` filter to `s` in your Datadog logs dashboard. This will help filter out unnecessary logs and help you focus only on the logs that you require.
+
+There is also an extensive list of filters and information [available here](https://github.com/BetaProjectWave/auth0-logs-to-datadog#filters) for the Auth0 logs extension via Github. Datadog also offers configuration of [Auth0 as a SAML IdP](https://docs.datadoghq.com/account_management/saml/auth0/#configuration) if you need further options for Auth0 configuration.
+
+We want to give a special thanks to creators of this extension, [BetaProjectWave](https://github.com/BetaProjectWave/auth0-logs-to-datadog). The thought, time, and work they put into this extension is making log tracking in Datadog better than ever and we can’t wait to see what extensions and integrations are created for Datadog in the near future. To learn more about Datadog extensions and integrations and how to get started on your own custom integrations, [read more here](https://docs.datadoghq.com/developers/integrations/new_check_howto/).
