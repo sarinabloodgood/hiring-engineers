@@ -168,8 +168,8 @@ Anomaly algorithms identify when a metric is behaving differently than before. T
 
 # Blog Post
 ## Monitor your Auth0 logs with Datadog
-
-Auth0 is a universal authentication and authorization platform for web, mobile, and native applications. Auth0 permits any application or API to connect to their service to eliminate unauthorized logins and improper access. Using the Dashboard or the Management API logs endpoint, Auth0 can pull log data on actions performed by administrators using the Dashboard, operations performed via the Management API, and authentications made by your users.
+![Datadog Logs](https://imgix.datadoghq.com/img/blog/announcing-logs/announcing-logs-hero-hg-b.png?fit=crop&w=1200&h=630)
+Auth0 is a universal authentication and authorization platform for web, mobile, and native applications. Auth0 permits any application or API to connect to their service to eliminate unauthorized logins and improper access. Using the Auth0 Dashboard or the Management API logs endpoint, Auth0 can pull log data on actions performed by administrators using the Dashboard, operations performed via the Management API, and authentications made by your users.
 
 ---
 
@@ -189,6 +189,6 @@ Once the files are available on your local host, run the command `yarn install �
 
 As a best practice, we recommend additionally configuring this extension to filter logs by a specific type such as LOG_TYPES or LOG_LEVEL. For example, to filter logs tied to a specific event such as when a user successfully logs in, set the `LOG_TYPES` filter to `s` in your Datadog logs dashboard. This will help filter out unnecessary logs and help you focus only on the logs that you require.
 
-There is also an extensive list of filters and information [available here](https://github.com/BetaProjectWave/auth0-logs-to-datadog#filters) for the Auth0 logs extension via Github. Datadog also offers configuration of [Auth0 as a SAML IdP](https://docs.datadoghq.com/account_management/saml/auth0/#configuration) if you need further options for Auth0 configuration.
+There is a list of filters and information [available here](https://github.com/BetaProjectWave/auth0-logs-to-datadog#filters) for the Auth0 logs extension via Github. Datadog also offers configuration of [Auth0 as a SAML IdP](https://docs.datadoghq.com/account_management/saml/auth0/#configuration) if you need further options for Auth0 configuration.
 
-We want to give a special thanks to creators of this extension, [BetaProjectWave](https://github.com/BetaProjectWave/auth0-logs-to-datadog). The thought, time, and work they put into this extension is making log tracking in Datadog better than ever and we can’t wait to see what extensions and integrations are created for Datadog in the near future. To learn more about Datadog extensions and integrations and how to get started on your own custom integrations, [read more here](https://docs.datadoghq.com/developers/integrations/new_check_howto/).
+We want to give a special thanks to creators of this extension, [BetaProjectWave](https://github.com/BetaProjectWave/auth0-logs-to-datadog). The thought, time, and work they and others contribute to this extension is what empowers us to support custom integrations. To learn more about Datadog extensions and integrations and how to get started on your own custom integration, [read more here](https://docs.datadoghq.com/developers/integrations/new_check_howto/).
